@@ -1,0 +1,41 @@
+{{page-title "TodoForm"}}
+<GeneralContainer>
+
+    <pre>TODOFORM</pre>
+
+    <LinkTo @route="index" class="add-btn">
+        <i class="fa-solid fa-angle-left" type="button">
+            Home
+        </i>
+    </LinkTo>
+ 
+
+    <form > 
+        <input 
+                placeholder="Title" 
+                value={{this.title}} 
+                {{on "change" this.titleChange}} 
+                required
+        /> 
+       
+        <textarea 
+                placeholder="Body" 
+                value={{this.body}} 
+                {{on "change" this.bodyChange}} 
+                required
+        />
+
+        <input 
+                placeholder="Time" 
+                value={{this.due}}   
+                {{on "change" this.dueChange}} 
+                required
+        />
+
+        <LinkTo @route="handleSubmit" class="btn btn-success save-btn" type="submit" {{on "click" this.saveReminder}} >Save</LinkTo>
+    </form>
+
+
+
+</GeneralContainer>
+{{outlet}}

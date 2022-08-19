@@ -1,0 +1,28 @@
+{{page-title "TodoList"}}
+<GeneralContainer>
+
+    <pre>TODOLIST</pre>
+    
+    <LinkTo @route="index" class="add-btn">
+        <i class="fa-solid fa-angle-left" type="button">
+            Home
+        </i>
+    </LinkTo>
+    <LinkTo @route="todoForm" class="add-btn">
+        <i class="fa-solid fa-angle-left" type="button">
+            Add
+        </i>
+    </LinkTo>
+    
+
+    {{#each this.todo.reminderList as |reminder reminderId|}}
+        <Todo 
+            @title={{reminder.title}}
+            @due={{reminder.due}}
+            @body={{reminder.body}}
+            @index={{reminderId}}
+        />
+    {{/each}}
+
+</GeneralContainer>
+{{outlet}}

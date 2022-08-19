@@ -1,0 +1,11 @@
+
+<div class="todo-container">
+    <div class="todo-template">
+        <div>{{@title}}</div>
+        <div>{{@due}}</div>
+        <div>{{@body}}</div>
+        <div>
+            <LinkTo @route="handleDelete" class="btn btn-danger del" type="button" {{on "click" (fn this.del @index)}}>Delete</LinkTo>
+        </div>
+    </div>
+</div>
